@@ -4,11 +4,16 @@
             "name": "values",
             "kind": "GroupingOrMeasure",
             "displayName": "Values"
+        },
+        {
+            "name": "Y",
+            "kind": "Measure",
+            "displayName": "Key"
         }
     ],
     "objects": {
         "dataPoint": {
-            "displayName": "adaads",
+            "displayName": "config",
             "properties": {
                 "defaultColor": {
                     "type": {
@@ -52,9 +57,18 @@
         {
             "table": {
                 "rows": {
-                    "for": {
-                        "in": "values"
-                    },
+                    "select": [
+                        {
+                            "for": {
+                                "in": "values"
+                            }
+                        },
+                        {
+                            "for": {
+                                "in": "Y"
+                            }
+                        }
+                    ],
                     "dataReductionAlgorithm": {
                         "top": {
                             "count": 30000
@@ -62,13 +76,14 @@
                     }
                 }
             }
+        
         }
     ],
     "privileges": [
         {
             "name": "WebAccess",
             "essential": true,
-            "parameters": ["https://chatllmapi.azurewebsites.net","https://api.openai.com","https://127.0.0.1","app-service-llm.azurewebsites.net"]
+            "parameters": ["https://chatllmapi.azurewebsites.net","https://api.openai.com","https://127.0.0.1","https://app-service-llm.azurewebsites.net"]
         }
     ]
 }

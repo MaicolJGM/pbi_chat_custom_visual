@@ -1,56 +1,127 @@
-p {
-    font-size: 20px;
-    font-weight: bold;
-    em {
-        background: yellow;
-        padding: 5px;
-        
-    }
-}
-
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-    margin: 0;
-    padding: 0;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 8px;
 }
 
-.container {
-    width: 80%;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.chatbot {
+  width: 380px;
+  height: 550px;
+  border: 1px solid #ddd;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f0f0f0;
+  font-size: 12px;
 }
 
-h1 {
-    text-align: center;
-    color: #333;
+.messages {
+  height: 440px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
-input[type="text"], button, textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
+.messages .user {
+  align-self: flex-end;
+  background-color: #4CAF50; /* Verde moderno */
+  color: white;
+}
+
+.messages .bot {
+  align-self: flex-start;
+  background-color: #eeeeee; /* Gris claro */
+}
+
+.messages div {
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.userInput {
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  flex: 1;
+  background-color: white;
+  word-wrap: break-word;
+  font-size: 12px;
 }
 
 button {
-    background-color: #00a4e4;
-    color: white;
-    border: none;
-    cursor: pointer;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #2196F3; /* Azul moderno */
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
 }
 
-button:hover {
-    background-color: #037ef3;
+ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 2px; /* Espacio alrededor de los elementos dentro del contenedor */
+  overflow: hidden;
+  background-color: white; /* Gris claro */
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
 }
 
-textarea {
-    height: 150px;
-    white-space: pre-line;
+li {
+  padding: 3px;
+  width: 120px;
+}
+li a {
+  display: flex;
+  color: #0056b3; /* Azul oscuro */
+  text-align: center;
+  padding: 3px 3px;
+  text-decoration: none;
+  transition: background-color 0.5s;
+  border-radius: 15px; /* Bordes redondeados */
+  justify-content: center;
+}
+
+li a:hover, .selected {
+  background-color: #0096ff; /* Azul claro */
+  color: white; /* Cambiar el color del texto a blanco para mejorar el contraste */
+}
+
+.selected {
+  background-color: #007bff; /* Azul más intenso para el seleccionado */
+}
+
+.list-models {
+  padding: 3px;
+  border: 2px solid #007BFF; /* Color del borde */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: white;
+  font-size: 16px; /* Tamaño de la fuente */
+  color: #007BFF; /* Color del texto */
+  outline: none; /* Elimina el contorno al enfocar */
+  -webkit-appearance: none; /* Elimina el estilo predeterminado en WebKit/Blink */
+  -moz-appearance: none; /* Elimina el estilo predeterminado en Firefox */
+  appearance: none; /* Elimina el estilo predeterminado */
+  cursor: pointer; /* Cambia el cursor a tipo puntero */
+  font-size: 12px;
+}
+
+#list-container{
+  padding: 3px;
+  height: 30px;
+  margin-bottom: 3px;
 }
